@@ -3,7 +3,6 @@ package com.example.vocabularybuilder;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-// import android.widget.Toast; // <-- This import is not used
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

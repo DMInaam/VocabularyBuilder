@@ -22,7 +22,6 @@ import com.example.vocabularybuilder.utils.Constants;
 import com.example.vocabularybuilder.viewmodel.CategoryViewModel;
 import com.example.vocabularybuilder.viewmodel.WordViewModel;
 
-// --- IMPROVEMENT: Added these imports ---
 import java.util.ArrayList;
 import java.util.List;
 
@@ -116,8 +115,6 @@ public class MainActivity extends AppCompatActivity {
         mCategoryAdapter.setOnCategoryClickListener(new CategoryAdapter.OnCategoryClickListener() {
             @Override
             public void onCategoryClick(Category category) {
-                // --- IMPROVEMENT (CRITICAL BUILD FIX): ---
-                // Declared the 'intent' object before using it.
                 Intent intent = new Intent(MainActivity.this, WordListActivity.class);
                 intent.putExtra(WordListActivity.EXTRA_CATEGORY, category.getName());
                 startActivity(intent);
@@ -160,11 +157,8 @@ public class MainActivity extends AppCompatActivity {
     private void showCreateCategoryDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        // --- IMPROVEMENT (CRITICAL BUILD FIX): ---
-        // Made 'dialogBinding' final so the lambda can access it.
         final DialogCreateCategoryBinding dialogBinding = DialogCreateCategoryBinding.inflate(getLayoutInflater());
 
-        // Set the View, but NOT the custom title (it's already in the view)
         builder.setView(dialogBinding.getRoot());
 
         builder.setPositiveButton("Create", (dialog, which) -> {
@@ -186,7 +180,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void createCategory(String name) {
-        // --- IMPROVEMENT (CRITICAL BUILD FIX): ---
         // Correctly created the new Category object before inserting.
         Category category = new Category(name);
         mCategoryViewModel.insert(category);
