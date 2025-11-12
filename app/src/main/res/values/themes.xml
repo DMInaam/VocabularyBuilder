@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--
+    This is your app's main (Light) theme.
+    It inherits from the Material Components DayNight theme and
+    maps your 'colors.xml' file to the theme attributes
+    (like ?attr/colorPrimary) that your layouts use.
+    -->
+    <style name="Theme.VocabularyBuilder" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/icons</item> <!-- White text on primary -->
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorOnSecondary">@color/icons</item> <!-- White text on accent -->
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+
+        <!--
+        IMPROVEMENT: Added critical attributes that our layouts need.
+        Without these, attributes like ?attr/colorError will crash the app.
+        -->
+        <item name="colorError">@color/error_red</item>
+        <item name="colorOnError">@color/icons</item>
+        <item name="android:colorBackground">@android:color/white</item>
+        <item name="colorSurface">@android:color/white</item>
+        <item name="colorOnSurface">@color/primary_text</item>
+
+        <!--
+        IMPROVEMENT (CRITICAL CRASH FIX):
+        Added the missing 'colorOnSurfaceVariant' attribute that
+        'activity_profile.xml' needs.
+        -->
+        <item name="colorOnSurfaceVariant">@color/secondary_text</item>
+
+        <item name="dividerColor">@color/divider</item>
+
+        <!--
+        This maps your 'box_background.xml' and other
+        drawables to the correct divider color
+        -->
+        <item name="divider" type="attr">@color/divider</item>
+    </style>
+
+    <!--
+    IMPROVEMENT: Removed the 'CategoryCard' and 'CategoryCardText' styles.
+    They are no longer used by our new 'activity_main.xml' layout (which now
+    uses a RecyclerView) and the 'CategoryCardText' style contained
+    layout attributes, which is not valid.
+    -->
+
+</resources>

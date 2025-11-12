@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <stroke
+        android:width="2dp"
+        android:color="?attr/colorPrimary" /> <!-- IMPROVEMENT 1: Use theme attribute -->
+
+    <corners android:radius="8dp" />
+
+    <solid android:color="@android:color/transparent" />
+
+    <!-- IMPROVEMENT 2: Add padding for the content (like text) inside -->
+    <padding
+        android:left="12dp"
+        android:top="12dp"
+        android:right="12dp"
+        android:bottom="12dp" />
+
+</shape>

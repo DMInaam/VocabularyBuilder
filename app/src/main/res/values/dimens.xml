@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+    IMPROVEMENT: Added a full set of standard spacing dimensions.
+    Using these instead of hard-coding '8dp' or '16dp' in layouts
+    makes your UI much more consistent and easier to change later.
+    -->
+
+    <!-- Standard spacing -->
+    <dimen name="padding_small">4dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+
+    <!-- Renamed your original dimension to match the new convention -->
+    <dimen name="big_padding">16dp</dimen>
+</resources>

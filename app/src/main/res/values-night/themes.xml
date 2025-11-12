@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--
+    This is your app's Dark Theme.
+    IMPROVEMENT: It MUST inherit from the same theme as your light theme.
+    We are using MaterialComponents (Material 2), not Material 3.
+    -->
+    <style name="Theme.VocabularyBuilder" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!-- Primary brand color (Dark) -->
+        <item name="colorPrimary">@color/primary_light</item>
+        <item name="colorPrimaryVariant">@color/primary</item>
+        <item name="colorOnPrimary">@color/primary_text</item> <!-- Black text on light primary -->
+
+        <!-- Secondary brand color (Dark) -->
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorOnSecondary">@color/icons</item> <!-- White text on accent -->
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorSurface</item>
+
+        <!-- Other standard theme attributes for Dark Mode -->
+        <item name="colorError">#CF6679</item> <!-- Standard Material dark error -->
+
+        <!--
+        IMPROVEMENT (CRITICAL BUILD FIX):
+        Replaced '@android/color/black' with a valid hex code.
+        -->
+        <item name="colorOnError">#000000</item> <!-- Black -->
+
+        <item name="android:colorBackground">#121212</item> <!-- Standard dark background -->
+        <item name="colorSurface">#121212</item>
+        <item name="colorOnSurface">@color/icons</item> <!-- White text on dark surface -->
+
+        <!--
+        IMPROVEMENT (CRITICAL CRASH FIX):
+        Added the missing 'colorOnSurfaceVariant' attribute that
+        'activity_profile.xml' needs.
+        -->
+        <item name="colorOnSurfaceVariant">@color/divider</item> <!-- A lighter grey for dark mode -->
+
+        <item name="dividerColor">@color/divider</item>
+
+        <item name="divider" type="attr">@color/divider</item>
+    </style>
+</resources>

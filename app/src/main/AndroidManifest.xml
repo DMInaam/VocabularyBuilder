@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+    IMPROVEMENT 1: Added INTERNET permission.
+    This is CRITICAL for Retrofit to make network calls.
+    -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.VocabularyBuilder"
+        tools:targetApi="31"
+        android:usesCleartextTraffic="true"> <!-- IMPROVEMENT 1: Added to allow http requests -->
+
+        <!-- Main Launcher Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--
+        IMPROVEMENT 2 (CRITICAL FIX):
+        All other activities MUST be declared and set to 'exported="false"'
+        to comply with modern Android (targetSdk 31+) policies.
+        -->
+        <activity
+            android:name=".WordListActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" /> <!-- Added parent for Up navigation -->
+        <activity
+            android:name=".WordDetailActivity"
+            android:exported="false"
+            android:parentActivityName=".WordListActivity" /> <!-- Added parent for Up navigation -->
+        <activity
+            android:name=".NewWordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".QuizActivity"
+            android:exported="false" />
+        <activity
+            android:name=".QuizSetupActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" /> <!-- Added parent for Up navigation -->
+        <activity
+            android:name=".QuizScoreActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DictionaryActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" /> <!-- Added parent for Up navigation -->
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" /> <!-- Added parent for Up navigation -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:parentActivityName=".LoginActivity" /> <!-- Added parent for Up navigation -->
+        <activity
+            android:name=".SearchActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" /> <!-- Added parent for Up navigation -->
+
+        <!-- This is the new activity we added -->
+        <activity
+            android:name=".LearntWordsActivity"
+            android:exported="false"
+            android:parentActivityName=".ProfileActivity" /> <!-- Or .MainActivity -->
+
+    </application>
+
+</manifest>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+IMPROVEMENT 1: Switched to ConstraintLayout for a modern, flexible layout.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuizActivity">
+
+    <!-- IMPROVEMENT 2: Added a Toolbar for navigation and title -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_close"
+            app:title="Quiz" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- IMPROVEMENT 3: Added a ProgressBar to show quiz progress -->
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/quiz_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:max="10"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+        tools:progress="3" />
+
+    <TextView
+        android:id="@+id/quiz_question_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textAppearance="?attr/textAppearanceBody2"
+        app:layout_constraintEnd_toEndOf="@id/quiz_progress"
+        app:layout_constraintTop_toBottomOf="@id/quiz_progress"
+        tools:text="Question 3 of 10" />
+
+    <!--
+    IMPROVEMENT 4: Better layout positioning for the question.
+    Pinned to the top half of the screen.
+    -->
+    <TextView
+        android:id="@+id/quiz_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"
+        android:textAppearance="?attr/textAppearanceHeadlineLarge"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/quiz_option_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/quiz_question_count"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Abate" /> <!-- Updated tools:text -->
+
+    <!--
+    IMPROVEMENT 5: Used MaterialButton with Outlined style for options.
+    IMPROVEMENT (READABILITY FIX): Added 'android:textAllCaps="false"'
+    and increased vertical padding.
+    -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/quiz_option_1"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:textAllCaps="false"
+        android:textAppearance="?attr/textAppearanceButton"
+        app:layout_constraintBottom_toTopOf="@+id/quiz_option_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/quiz_question"
+        tools:text="To increase in rate, amount, or extent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/quiz_option_2"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:textAllCaps="false"
+        android:textAppearance="?attr/textAppearanceButton"
+        app:layout_constraintBottom_toTopOf="@+id/quiz_option_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/quiz_option_1"
+        tools:text="The act of renouncing or rejecting something" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/quiz_option_3"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:textAllCaps="false"
+        android:textAppearance="?attr/textAppearanceButton"
+        app:layout_constraintBottom_toTopOf="@+id/quiz_option_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/quiz_option_2"
+        tools:text="A conflagration; a flame." />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/quiz_option_4"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:textAllCaps="false"
+        android:textAppearance="?attr/textAppearanceButton"
+        app:layout_constraintBottom_toTopOf="@+id/quiz_next_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/quiz_option_3"
+        tools:text="A departure from what is normal, usual, or expected" />
+
+    <!--
+    IMPROVEMENT 6: Pinned "Next" button to the bottom.
+    Used our capsule background for a primary button look.
+    -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/quiz_next_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/capsule_button_background"
+        android:text="@string/next_question"
+        android:textAppearance="?attr/textAppearanceButton"
+        android:textColor="?attr/colorOnPrimary"
+        android:visibility="gone"
+        app:backgroundTint="?attr/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

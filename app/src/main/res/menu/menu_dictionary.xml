@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--
+    This is the Search Action View. It will appear in your Toolbar.
+    We are tinting the icon to match the Toolbar's standard icon color.
+    -->
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_search"
+        android:title="@string/action_search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:iconTint="?attr/colorControlNormal"
+        app:showAsAction="ifRoom|collapseActionView" />
+
+</menu>

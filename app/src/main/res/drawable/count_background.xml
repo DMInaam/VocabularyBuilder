@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <corners android:radius="8dp" />
+
+    <!-- IMPROVEMENT 1: Use the theme's primary color attribute -->
+    <solid android:color="?attr/colorPrimary" />
+
+    <!--
+    IMPROVEMENT 2: Add small padding.
+    This is good for a count badge (e.g., "3") so the number
+    isn't right against the edge.
+    -->
+    <padding
+        android:left="6dp"
+        android:top="2dp"
+        android:right="6dp"
+        android:bottom="2dp" />
+
+</shape>

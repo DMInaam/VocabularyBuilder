@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This drawable is used for circular progress bars.
+It's a <rotate> element containing a <shape> of type 'ring'.
+-->
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromDegrees="270"
+    android:toDegrees="270">
+
+    <shape
+        android:innerRadiusRatio="2.5"
+        android:shape="ring"
+        android:thickness="12dp"
+        android:useLevel="true"> <!-- `useLevel="true"` is correct for a ProgressBar -->
+
+        <!--
+        IMPROVEMENT: Replaced hard-coded colors with theme attributes.
+        This allows the progress bar to automatically match your app's theme
+        (e.g., in light mode vs. dark mode).
+        -->
+        <gradient
+            android:angle="0"
+            android:endColor="?attr/colorSecondary"
+            android:startColor="?attr/colorPrimary"
+            android:type="sweep"
+            android:useLevel="false" />
+    </shape>
+</rotate>

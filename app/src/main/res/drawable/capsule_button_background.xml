@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- This large radius creates the "capsule" or "pill" shape -->
+    <corners android:radius="50dp" />
+
+    <!-- Uses the app's theme color, which is excellent -->
+    <solid android:color="?attr/colorPrimary" />
+
+    <!-- IMPROVEMENT: Add horizontal padding so the text isn't at the very edge -->
+    <padding
+        android:left="24dp"
+        android:right="24dp" />
+
+</shape>

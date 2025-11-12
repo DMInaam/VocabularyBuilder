@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">VocabularyBuilder</string>
+
+    <!-- General UI & Actions -->
+    <string name="add_new_word">Add New Word</string>
+    <string name="action_save">Save</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_search">Search</string>
+    <string name="action_profile">Profile</string>
+    <string name="action_logout">Logout</string>
+    <string name="action_dictionary">Dictionary</string>
+    <string name="action_add_to_category">Add to Category</string>
+    <string name="action_delete_category">Delete Category</string>
+    <string name="action_create_category">New Category</string>
+    <string name="bookmark_word">Bookmark Word</string>
+    <string name="empty_not_saved">Word cannot be empty</string>
+    <string name="search_dictionary">Search Dictionary</string>
+    <string name="no_results_found">No results found.</string>
+
+    <!-- Hints and Labels -->
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_word">Word</string>
+    <string name="label_meaning">Meaning</string>
+    <string name="label_example">Example</string>
+    <string name="part_of_speech">Part of Speech</string>
+    <string name="word_detail_title">Word Detail</string>
+
+    <!-- Buttons -->
+    <!-- THIS IS THE MISSING STRING THAT CAUSED THE BUILD ERROR -->
+    <string name="button_save">Save Word</string>
+
+    <!-- Login & Register -->
+    <string name="login">Login</string>
+    <string name="login_subtitle">Please sign in to continue</string>
+    <string name="register">Register</string>
+    <string name="register_subtitle">Create a new account</string>
+    <string name="go_to_register">No account yet? Register now</string>
+    <string name="go_to_login">Already have an account? Login</string>
+    <string name="login_failed">Invalid username or password</string>
+    <string name="login_successful">Login Successful</string>
+    <string name="registration_successful">Registration Successful</string>
+    <string name="registration_failed">Registration Failed</string>
+    <string name="email">Email</string>
+
+    <!-- Main Dashboard -->
+    <string name="word_of_the_day">Word of the Day</string>
+    <string name="categories">Categories</string>
+
+    <!-- Profile Screen -->
+    <string name="profile_stat_learnt">Learnt</string>
+    <string name="profile_stat_today">Today</string>
+    <string name="profile_stat_streak">Streak</string>
+    <string name="profile_quiz_history">Quiz History</string>
+
+    <!-- Quiz -->
+    <string name="start_quiz">Start Quiz</string>
+    <string name="quiz_title">Quiz</string>
+    <string name="quiz_setup_title">Setup Quiz</string>
+    <string name="quiz_setup_prompt">How many words would you like to be quizzed on?</string>
+    <string name="hint_num_questions">Number of Questions</string>
+    <string name="quiz_question_placeholder">Question will appear here.</string>
+    <string name="quiz_question_count">Question %1$d of %2$d</string>
+    <string name="quiz_score_title">Quiz Finished!</string>
+    <string name="quiz_score_subtitle">Your Score: %1$d/%2$d</string>
+    <string name="quiz_score_percent">%1$d%%</string>
+    <string name="quiz_go_home">Go to Home</string>
+    <string name="quiz_finish">Finish</string>
+    <string name="next_question">Next</string>
+    <string name="quiz_history_questions">Questions:</string>
+    <string name="quiz_history_your_answer">Your answer: %1$s</string>
+    <string name="quiz_history_correct_answer">Correct: %1$s</string>
+
+</resources>
